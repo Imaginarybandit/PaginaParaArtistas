@@ -1,0 +1,71 @@
+<% layout('./layouts/boilerplate') %>
+
+<!-- Make a div for an image -->
+<body>
+  <div
+    class="container-fluid d-flex flex-column justify-content-center align-items-center"
+  >
+    <div id="titleImage " class="titleImage">
+      <img class="posterImg" src="/img/ex4.jpg" alt="Group Image" />
+    </div>
+
+    <!-- Make a div for the group name -->
+    <div class="nameAndDescription">
+      <div class="nameCreateActivity d-flex flex-row justify-content-between">
+        <div id="title" class="title d-inline-block">
+          <h1><%= group.name %></h1>
+        </div>
+        <a
+          href="/groups/<%= group.id %>/activities/new"
+          class="btn btn-primary mx-5"
+          >Crear Actividad</a
+        >
+      </div>
+      <!-- Make a div for the group description -->
+      <div id="description" class="description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          voluptas, quae, quod, voluptates quibusdam voluptatibus quidem
+          voluptatum quos quia quas nesciunt. Quisquam, quae. Quisquam voluptas,
+          quae, quod, voluptates quibusdam voluptatibus quidem voluptatum quos
+          quia quas nesciunt. Quisquam, quae.
+        </p>
+      </div>
+    </div>
+
+    <!-- Make a div, inside that div add another div that has an image, a date, a short description and a link -->
+
+    <div class="actividadesYGaleria">
+      <div class="opciones d-flex flex-row justify-content-center">
+        <h4 class="mx-5 d-inline-block mb-0 selected">Actividades</h4>
+
+        <h4 class="d-inline-block mb-0">Galeria</h4>
+      </div>
+      <hr class="line" size="10" />
+
+      <div class="container-fluid d-flex flex-row justify-content-center">
+        <div id="activitiesBox" class="activitiesBox">
+          <!-- Aqui iran las cajas individuales -->
+          <% for(i=0; i<4; i++) {%>
+          <div class="itemBox d-flex flex-column">
+            <div class="activityImage mx-auto">
+              <img class="picture img-fluid" src="/img/ex2.jpg" alt="" />
+            </div>
+
+            <div class="itemBoxContent px-4">
+              <div class="itemBoxContentTitle">
+                <b><h3 id="actTitle">Actividad 1</h3></b>
+              </div>
+              <div class="Bygroup">
+                <b>Grupo 1</b>
+              </div>
+              <div class="itemBoxContentDate">Fecha: 01/01/2021</div>
+              <div class="itemBoxContentLocation">Ubicación: San Juan</div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

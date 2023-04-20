@@ -1,0 +1,30 @@
+
+  <h2 id="tituloDeFeatured">Actividades esta semana</h2>
+
+<div class="container-fluid d-flex flex-row justify-content-center">
+  <div id="featured" class="featured">
+    <div id="featured_content" class="featured_content">
+      <!-- Aqui iran las cajas individuales -->
+<% for(let i = 0; i< 8;i ++){ %>
+      <div id="featureditem"class="featured_item d-flex flex-column">
+         
+          <div id="image" class="image mx-auto ">
+            <img class="pict"src="https://picsum.photos/200/300" alt="" />
+          </div>
+        
+        <div class="featured_box_content px-4">
+          <div class="featured_box_content_title">
+            <b><h3 id="BoxTitle">Actividad 1</h3></b>
+          </div>
+          <div class="grupo">
+            <b>Grupo 1</b>
+          </div>
+          <div class="featured_box_content_date">Fecha: 01/01/2021</div>
+          <div class="location">Ubicación: San Juan</div>
+        </div> 
+      </div>
+      <%}%>
+      </div>
+    </div>
+  </div>
+</div>
