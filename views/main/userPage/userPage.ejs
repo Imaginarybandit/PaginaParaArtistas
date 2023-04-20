@@ -1,0 +1,63 @@
+<% layout('./layouts/boilerplate') %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<h1><%= user.username%></h1>
+				<!-- User Info Card -->
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title"><%=user.name %> <%=user.surname %></h5>
+					</div>
+					<div class="card-body">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">Email: <%= user.email%></li>
+							<li class="list-group-item">Phone: 555-555-5555</li>
+							
+							<li class="list-group-item">City: <%= user.city%></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- make a button for creating new groups  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <!-- Create a form with post  -->
+                <form action= "/admin/<%=user._id%>" method="POST">
+                    <button type="submit" class="btn btn-success">Upgrade to admin</a>
+                </form>
+                
+            </div>
+
+            <div class="col-md-6 offset-md-3">
+                <a href="/groups/new" class="btn btn-primary">Create a new group</a>
+            </div>
+
+<!-- Make a div with an title of MarcosD  -->
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1><%=user.username%>'s Groups</h1>
+               
+                <% for (let i = 0; i < 2; i++) { %>
+
+                <!-- Create a div with information inside-->
+<div class="usergroupBox">
+
+</div>
+
+
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+	
+</body>
+
