@@ -23,24 +23,25 @@ router.get("/publicacion", function (req, res, next) {
 
 //make a get router for new  activities
 router.get("/:id/publicacion/new", function (req, res, next) {
-  res.render("main/publicaciones/Nuevapublicacion");
-});
-
-router.post("groups/:id/publicacion/new", async function (req, res, next) {
   const groupId = req.params.id;
 
-  const { title, description, date, time, location } = req.body;
+  res.render("main/publicaciones/Nuevapublicacion", { groupId });
+});
+
+router.post("/:id/publicacion/new", async function (req, res, next) {
+  const groupId = req.params.id;
+
   const publicacion = new Publicacion({
-    title: title,
-    description: description,
-    date: date,
-    time: time,
-    location: location,
+    title: req.body.title,
+    description: req.body.content,
+    date: req.body.date,
+    time: req.body.time,
+    location: req.body.localizacion,
   });
   publicacion.group = groupId;
-  //save the publicacion object
+
   publicacion.save();
-  res.send("Publicacion creada");
+  res.send(publicacion);
 });
 
 module.exports = router;

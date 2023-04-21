@@ -4,14 +4,14 @@
     <div class="col-lg-8">
       <!-- Main Content -->
       <h1 class="mb-4">Create New Publication</h1>
-      <form action="/publicacion/new" method="POST">
+      <form action="/<%=groupId%>/publicacion/new" method="POST">
         <div class="form-group">
           <label for="postTitle">Title</label>
           <input
             type="text"
             class="form-control"
             id="postTitle"
-            name="Title"
+            name="title"
             placeholder="Enter post title"
           />
         </div>
@@ -20,7 +20,7 @@
           <textarea
             class="form-control"
             id="postContent"
-            name="Content"
+            name="content"
             rows="10"
             placeholder="Write your post content"
           ></textarea>
@@ -32,7 +32,7 @@
             type="date"
             class="form-control"
             id="postDate"
-            name="Date"
+            name="date"
             placeholder="Enter post date"
           />
         </div>
@@ -43,7 +43,7 @@
             type="text"
             class="form-control"
             id="postImage"
-            name="Image"
+            name="image"
             placeholder="Enter post image"
           />
         </div>
@@ -54,7 +54,7 @@
             type="text"
             class="form-control"
             id="postLocalizacion"
-            name="Localizacion"
+            name="localizacion"
             placeholder="Enter post group"
           />
         </div>

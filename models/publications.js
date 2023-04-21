@@ -13,7 +13,7 @@ const PublicationSchema = new Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
+    required: true,
   },
   group: {
     type: Schema.Types.ObjectId,
@@ -25,6 +25,10 @@ const PublicationSchema = new Schema({
       required: true,
     },
   ],
+  location: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("publications", PublicationSchema);
