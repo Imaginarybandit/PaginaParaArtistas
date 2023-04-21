@@ -11,9 +11,8 @@ router.post("/admin/:id", async (req, res) => {
   const user = await User.findById(id);
   user.isAdmin = true;
   user.save();
-  //   const newAdmin = new Admin({ userId: id });
-  //save the new admin
-  //   newAdmin.save();
+  const newAdmin = new Admin({ userId: id });
+  newAdmin.save();
   res.redirect("main/userPage/userPage");
 });
 

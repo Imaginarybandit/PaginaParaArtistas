@@ -5,16 +5,6 @@ const User = require("../../models/user");
 const Admin = require("../../models/admin");
 const { isLoggedIn } = require("../../utils/IsLoggedIn");
 
-router.get("/pop", async (req, res) => {
-  //find user by name
-  const user = await User.findOne({ name: "Angelica" });
-  //create a new admin
-  const admin = new Admin({ userId: user._id });
-
-  admin.save();
-  res.send(admin);
-});
-
 router.get("/groups", async (req, res) => {
   //const groups = await Group.find({});
   res.render("main/groups/searchGroup");
@@ -50,7 +40,9 @@ router.get("/groups/:id", async (req, res) => {
     const admin = await Admin.findOne({ userId: req.user._id }).populate(
       "groups"
     );
-    const group = await Group.findById(id).populate("admin");
+    const group = await Group.findById(id)
+      .populate("admin")
+      .populate("publications");
 
     res.render("main/groups/showGroup", { group, admin });
   }

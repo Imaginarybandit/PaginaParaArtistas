@@ -25,6 +25,8 @@
     <!-- make a button for creating new groups  -->
     <div class="container">
         <div class="row">
+
+            <% if(user.isAdmin !== true){ %>
             <div class="col-md-6 offset-md-3">
                 <!-- Create a form with post  -->
                 <form action= "/admin/<%=user._id%>" method="POST">
@@ -32,24 +34,32 @@
                 </form>
                 
             </div>
-
+            <% } else {%>
             <div class="col-md-6 offset-md-3">
                 <a href="/groups/new" class="btn btn-primary">Create a new group</a>
             </div>
+            <% } %>
 
 <!-- Make a div with an title of MarcosD  -->
 <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <h1><%=user.username%>'s Groups</h1>
+                <h2><%=user.username%>'s Groups</h2>
                
-                <% for (let i = 0; i < 2; i++) { %>
+                <% for (let i = 0; i < admin.groups.length; i++) { %>
 
                 <!-- Create a div with information inside-->
-<div class="usergroupBox">
 
-</div>
+    <div class="container usergroupBox">
+        <div class="card">
+          <div class="card-body d-flex flex-row">
+            <div class="groupThumbNail d-inline"></div>
+            <a class="align-self-center" href="/groups/<%=admin.groups[i]._id%>"><h5 class="card-title d-inline mx-3"><%=admin.groups[i].name%></h5></a>
 
+            
+          </div>
+        </div>
+      </div>
 
                 <%}%>
             </div>
