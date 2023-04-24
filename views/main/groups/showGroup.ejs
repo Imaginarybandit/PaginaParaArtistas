@@ -5,7 +5,7 @@
   <div
     class=" container-fluid d-flex flex-column justify-content-center align-items-center"
   >
-    <div id="titleImage " class="my-5 titleImage">
+    <div id="titleImage" class="my-5 titleImage">
       <img class="posterImg" src="/img/ex4.jpg" alt="Group Image" />
     </div>
 
@@ -32,23 +32,24 @@
         </p>
       </div>
     </div>
-
-    <div class="actividadesYGaleria">
+<div id="actYGal" class="row actYGal">
+  <div class="col-lg-12 ">
+    <div  >
       <div class="opciones d-flex flex-row justify-content-center">
-        <div class="actOp selected">
-        <a id="octOp" href="#"><h4 class=" mx-5 d-inline-block mb-0">Actividades</h4></a>
+        <div class="actOp selected d-flex flex-column justify-content-center">
+        <a id="octOp" href="#"><h4 id="Act" class=" mx-5 d-inline-block mb-0">Actividades</h4></a>
 </div>
-<div class="octOp">
-  <a id="octOp" href="#"><h4 class="mx-5 d-inline-block mb-0">Galeria</h4></a>
+<div class="octOp d-flex flex-column justify-content-center">
+  <a id="octOp" href="#"><h4 id="Gal" class="mx-5 d-inline-block mb-0">Galeria</h4></a>
       </div>
       </div>
       <hr class="line" size="10" />
 
-      <div class="container-fluid d-flex flex-row justify-content-center">
-        <div id="activitiesBox" class="activitiesBox">
+      <div class="container d-flex flex-row justify-content-center">
+        <div id="activitiesBox" class="activitiesBox" >
           <!-- Aqui iran las cajas individuales -->
           <% for(i=0; i<group.publications.length; i++) {%>
-          <div class="itemBox d-flex flex-column">
+          <div class="itemBox d-flex flex-column mb-3" >
             <div class="activityImage mx-auto">
               <img class="picture img-fluid" src="/img/ex2.jpg" alt="" />
             </div>
@@ -57,16 +58,18 @@
               <div class="itemBoxContentTitle">
                <a class="itemTitle" href="/publicacion/<%= group.publications[i]._id%>"><b><h3 id="actTitle"><%= group.publications[i].title%> </h3></b></a>
               </div>
-              <div class="Bygroup">
+              <div class="itemBoxText">
                 <b><%=group.name%></b>
               </div>
-              <div class="itemBoxContentDate"><%= group.publications[i].date%></div>
-              <div class="itemBoxContentLocation"><%= group.publications[i].location %></div>
+              <div class="itemBoxText"><%= group.publications[i].date%></div>
+              <div class="itemBoxText"><%= group.publications[i].location %></div>
             </div>
           </div>
           <% } %>
+          <div class="galeriesBox"></div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </body>

@@ -23,9 +23,20 @@
               <a class="nav-link" href="/register" tabindex="-1">Register</a>
             </li>
             <% } else {%>
-            <li class="nav-item d-lg-none d-md-block">
-              <a class="nav-link" href="/logout" tabindex="-1">Logout</a>
-            </li>
+              <li class="nav-item d-lg-none">
+                <div class="dropdown">
+                  <a class="btn btn-secondary " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= user.username %>
+                  </a>
+                
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="/profile">Cuenta</a></li>
+                    <li><a class="dropdown-item" href="/groups/">Groups</a></li>
+                    <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                  </ul>
+                </div>
+                
+              </li>
             <% } %>
           </ul>
 
