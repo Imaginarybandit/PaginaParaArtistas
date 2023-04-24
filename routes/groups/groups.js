@@ -40,6 +40,7 @@ router.get("/groups/:id", async (req, res) => {
     const admin = await Admin.findOne({ userId: req.user._id }).populate(
       "groups"
     );
+
     const group = await Group.findById(id)
       .populate("admin")
       .populate("publications");

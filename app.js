@@ -20,7 +20,7 @@ const profileRouter = require("./routes/user/user");
 const adminRouter = require("./routes/user/admin");
 const User = require("./models/user");
 
-mongoose.connect("mongodb://127.0.0.1:27017/PFdummy", {
+mongoose.connect("mongodb://localhost:27017/PFdummy", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

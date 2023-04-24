@@ -1,25 +1,21 @@
 <% layout('./layouts/boilerplate') %>
 <div class="container-fluid d-flex flex-row justify-content-center">
-  <div id="featured" class="featured">
-    <div id="featured_content" class="featured_content">
-      <!-- Aqui iran las cajas individuales -->
+  <div class="itemBox d-flex flex-column">
+    <div class="activityImage mx-auto">
+      <img class="picture img-fluid" src="/img/ex2.jpg" alt="" />
+    </div>
 
-      <div id="featureditem" class="featured_item d-flex flex-column">
-        <div id="image" class="image mx-auto">
-          <img class="pict" src="https://picsum.photos/200/300" alt="" />
-        </div>
-
-        <div class="featured_box_content px-4">
-          <div class="featured_box_content_title">
-            <b><h3 id="BoxTitle">Actividad 1</h3></b>
-          </div>
-          <div class="grupo">
-            <b>Grupo 1</b>
-          </div>
-          <div class="featured_box_content_date">Fecha: 01/01/2021</div>
-          <div class="location">Ubicación: San Juan</div>
-        </div>
+    <div class="itemBoxContent px-4">
+      <div class="itemBoxContentTitle">
+        <a class="itemTitle" href="#"
+          ><b><h3 id="actTitle">Title</h3></b></a
+        >
       </div>
+      <div class="Bygroup">
+        <b>Grupo</b>
+      </div>
+      <div class="itemBoxContentDate">Fecha</div>
+      <div class="itemBoxContentLocation">Localizacion</div>
     </div>
   </div>
 </div>

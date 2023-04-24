@@ -3,20 +3,22 @@
 <!-- Make a div for an image -->
 <body>
   <div
-    class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    class=" container-fluid d-flex flex-column justify-content-center align-items-center"
   >
-    <div id="titleImage " class="titleImage">
+    <div id="titleImage " class="my-5 titleImage">
       <img class="posterImg" src="/img/ex4.jpg" alt="Group Image" />
     </div>
 
     <!-- Make a div for the group name -->
-    <div class="nameAndDescription">
-      <div class="nameCreateActivity d-flex flex-row justify-content-between">
+    <div class="nameAndDescription mb-5">
+      <div class="nameCreateActivity d-flex flex-row justify-content-between mb-3">
         <div id="title" class="title d-inline-block">
           <h1><%= group.name %></h1>
         </div>
-        <a href="/<%=group._id%>/publicacion/new" class="btn btn-primary mx-5"
-          >Crear Actividad</a
+        <a
+          href="/<%=group._id%>/publicacion/new"
+          class="btn btn-primary mx-5 align-self-center"
+          >Crear Publicacion</a
         >
       </div>
       <!-- Make a div for the group description -->
@@ -31,20 +33,21 @@
       </div>
     </div>
 
-    <!-- Make a div, inside that div add another div that has an image, a date, a short description and a link -->
-
     <div class="actividadesYGaleria">
       <div class="opciones d-flex flex-row justify-content-center">
-        <h4 class="mx-5 d-inline-block mb-0 selected">Actividades</h4>
-
-        <h4 class="d-inline-block mb-0">Galeria</h4>
+        <div class="actOp selected">
+        <a id="octOp" href="#"><h4 class=" mx-5 d-inline-block mb-0">Actividades</h4></a>
+</div>
+<div class="octOp">
+  <a id="octOp" href="#"><h4 class="mx-5 d-inline-block mb-0">Galeria</h4></a>
+      </div>
       </div>
       <hr class="line" size="10" />
 
       <div class="container-fluid d-flex flex-row justify-content-center">
         <div id="activitiesBox" class="activitiesBox">
           <!-- Aqui iran las cajas individuales -->
-          <% for(i=0; i<4; i++) {%>
+          <% for(i=0; i<group.publications.length; i++) {%>
           <div class="itemBox d-flex flex-column">
             <div class="activityImage mx-auto">
               <img class="picture img-fluid" src="/img/ex2.jpg" alt="" />
@@ -52,13 +55,13 @@
 
             <div class="itemBoxContent px-4">
               <div class="itemBoxContentTitle">
-                <b><h3 id="actTitle">Actividad 1</h3></b>
+               <a class="itemTitle" href="/publicacion/<%= group.publications[i]._id%>"><b><h3 id="actTitle"><%= group.publications[i].title%> </h3></b></a>
               </div>
               <div class="Bygroup">
-                <b>Grupo 1</b>
+                <b><%=group.name%></b>
               </div>
-              <div class="itemBoxContentDate">Fecha: 01/01/2021</div>
-              <div class="itemBoxContentLocation">Ubicación: San Juan</div>
+              <div class="itemBoxContentDate"><%= group.publications[i].date%></div>
+              <div class="itemBoxContentLocation"><%= group.publications[i].location %></div>
             </div>
           </div>
           <% } %>
