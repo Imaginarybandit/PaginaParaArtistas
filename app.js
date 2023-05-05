@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const session = require("express-session");
@@ -18,6 +22,7 @@ const groupsRouter = require("./routes/groups/groups");
 const publicacionesRouter = require("./routes/publicaciones/publicaciones");
 const profileRouter = require("./routes/user/user");
 const adminRouter = require("./routes/user/admin");
+const uploadRouter = require("./routes/gallery/gallery");
 const User = require("./models/user");
 
 mongoose.connect("mongodb://127.0.0.1:27017/PFdummy", {
@@ -77,6 +82,7 @@ app.use("/", groupsRouter);
 app.use("/", publicacionesRouter);
 app.use("/", profileRouter);
 app.use("/", adminRouter);
+app.use("/", uploadRouter);
 
 app.listen(3000, () => {
   console.log("Server started on port 3000");

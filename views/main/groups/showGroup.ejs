@@ -21,6 +21,13 @@
           >Crear Publicacion</a
         >
       </div>
+      <!-- make a form for uploading images -->
+    
+       <a href="/gallery/upload" <button type="submit" class="btn btn-primary mx-auto">
+          Upload Image
+        </button>
+     
+
       <!-- Make a div for the group description -->
       <div id="description" class="description">
         <p>
@@ -46,7 +53,7 @@
       <hr class="line" size="10" />
 
       <div class="container d-flex flex-row justify-content-center">
-        <div id="activitiesBox" class="activitiesBox" >
+        <div id="activitiesBox" class="activitiesBox" style="display:none;" >
           <!-- Aqui iran las cajas individuales -->
           <% for(i=0; i<group.publications.length; i++) {%>
           <div class="itemBox d-flex flex-column mb-3" >
@@ -66,7 +73,9 @@
             </div>
           </div>
           <% } %>
-          <div class="galeriesBox"></div>
+          <div class="galeriesBox">
+
+          </div>
         </div>
       </div>
     </div>

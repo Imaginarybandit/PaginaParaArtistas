@@ -20,13 +20,14 @@ const GroupSchema = new Schema({
     ref: "admins",
   },
   posterimage: {
-    type: String,
-    required: false,
+    url: String,
+    filename: String,
   },
+
   images: [
     {
-      type: String,
-      required: true,
+      url: String,
+      filename: String,
     },
   ],
   website: {
